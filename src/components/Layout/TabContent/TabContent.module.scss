@@ -1,0 +1,19 @@
+@import "src/styles/variables";
+
+.TabContent {
+	flex-grow: 1;
+	box-sizing: border-box;
+	height: calc(100% - 58px);
+
+	.holder {
+		width: 100%;
+		padding: 1rem 0 0 0;
+	}
+
+	@include media-breakpoint-up(sm) {
+		flex-direction: row;
+		width: 410px;
+		flex-grow: 0;
+		height: 100%;
+	}
+}

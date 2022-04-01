@@ -1,0 +1,68 @@
+@import "src/styles/variables";
+.ChatTextComponent {
+	position: fixed;
+	bottom: 0;
+	backdrop-filter: blur(4px);
+	width: calc(100% - 1.5rem);
+	box-sizing: border-box;
+	padding: 6px 6px;
+
+	.holder {
+		display: flex;
+		width: 100%;
+		border-radius: 8px;
+		padding: 4px 12px;
+		align-items: stretch;
+
+		.smileyHolder {
+			background: transparent;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			button {
+				border: 0;
+			}
+		}
+
+		.inputHolder {
+			flex-grow: 0.8;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			textarea {
+				width: 100%;
+				height: 50%;
+			}
+		}
+
+		.fileAttachIcon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			button {
+				border: 0;
+			}
+		}
+
+		.sendButtonHolder {
+			flex-grow: 0.6;
+			display: flex;
+			justify-content: center;
+
+			.sendButton {
+				width: 100%;
+				border-radius: 8px;
+				border: none;
+				i {
+					color: #ffffff;
+				}
+			}
+			@include media-breakpoint-up(sm) {
+				flex-grow: 0.1;
+			}
+		}
+	}
+}

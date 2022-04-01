@@ -1,0 +1,32 @@
+@import "src/styles/variables";
+
+.MessageContent {
+	flex-grow: 3;
+	display: flex;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow-x: hidden;
+
+	.messageContainer {
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		transition: all 0.3s ease-out;
+		transform: translate(100%, 0);
+
+		&.showContainer {
+			transform: translate(0, 0);
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		width: unset;
+
+		.messageContainer {
+			transform: translate(0%, 0);
+		}
+	}
+}

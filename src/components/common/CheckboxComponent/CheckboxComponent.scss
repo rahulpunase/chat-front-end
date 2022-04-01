@@ -1,0 +1,24 @@
+.CheckboxComponent {
+	cursor: pointer;
+	font-size: 1.2rem;
+	input[type="checkbox"] {
+		cursor: pointer;
+		display: none;
+	}
+
+	input[type="checkbox"] ~ .fa_cus {
+		display: block;
+	}
+
+	input[type="checkbox"] ~ .fa-check-square {
+		display: none;
+	}
+
+	input[type="checkbox"]:checked ~ .fa-square {
+		display: none;
+	}
+
+	input[type="checkbox"]:checked ~ .fa-check-square {
+		display: block;
+	}
+}

@@ -1,0 +1,15 @@
+.ChatsPage {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	.searchInputHolder {
+		display: flex;
+	}
+
+	.chatListHolder {
+		display: flex;
+		overflow-y: auto;
+		flex-grow: 1;
+	}
+}

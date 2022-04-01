@@ -1,0 +1,40 @@
+@import "src/styles/variables";
+
+.ChatHeader {
+	display: flex;
+	padding: 12px 0;
+
+	.profileHolder {
+		display: flex;
+		align-items: flex-end;
+		padding: 0 4px;
+		margin-right: 10px;
+
+		.profile {
+			width: 44px;
+			height: 44px;
+			background: gray;
+			border-radius: 50%;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	i {
+		font-size: 1.4rem;
+	}
+
+	.details {
+		.name {
+			font-size: 1.2rem;
+		}
+
+		.tag {
+			font-size: 1rem;
+		}
+	}
+}

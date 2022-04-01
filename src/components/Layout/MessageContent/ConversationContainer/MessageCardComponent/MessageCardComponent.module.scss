@@ -1,0 +1,66 @@
+@import "src/styles/variables";
+
+.MessageCardComponent {
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+
+	&.userMessage {
+		justify-content: flex-end;
+	}
+
+	&.otherUserMessage {
+		justify-content: flex-start;
+	}
+
+	.same {
+		padding: 10px;
+		display: flex;
+		width: 90%;
+		box-sizing: border-box;
+
+		.profileHolder {
+			display: flex;
+			align-items: flex-end;
+			padding: 0 4px;
+
+			.profile {
+				width: 30px;
+				height: 30px;
+				background: gray;
+				border-radius: 50%;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: 100%;
+				}
+
+				@include media-breakpoint-up(sm) {
+					width: 44px;
+					height: 44px;
+				}
+			}
+		}
+
+		.messageDetailsHolder {
+			display: flex;
+			flex-grow: 1;
+			flex-direction: column;
+
+			.messageContent {
+				padding: 12px 14px;
+				border-radius: 8px;
+			}
+		}
+
+		.optionHolder {
+			display: flex;
+			margin: 0 10px;
+		}
+
+		@include media-breakpoint-up(sm) {
+			width: 60%;
+		}
+	}
+}

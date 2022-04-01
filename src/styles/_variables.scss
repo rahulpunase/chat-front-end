@@ -1,0 +1,137 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+//common colors
+$white: #ffffff;
+//epic colors
+$blue-pr: #5264F5;
+$pink-pr: #f352f9;
+$gray-pr: $gray-900;
+$green-pr: $green;
+
+$_theme: (
+	"blue": (
+		primary: $blue-pr,
+	),
+	"pink": (
+		primary: $pink-pr,
+	),
+	"gray": (
+		primary: $gray-pr,
+	),
+	"green": (
+		primary: $green-pr,
+	),
+);
+
+@function getColor($base, $shade) {
+	$_color: map_get(map_get($_theme, $base), $shade);
+	@return $_color;
+}
+
+
+@mixin messenger_themes($theme-name) {
+	$main_color: getColor($theme-name, "primary");
+	$color_on_45: tint-color($main_color, 45%);
+	$color_on_65: tint-color($main_color, 65%);
+	$color_on_75: tint-color($main_color, 75%);
+	$color_on_85: tint-color($main_color, 85%);
+	$color_on_80: tint-color($main_color, 80%);
+	$color_on_90: tint-color($main_color, 90%);
+	$color_on_95: tint-color($main_color, 95%);
+	// shades
+	$shade_on_40: shade-color($main_color, 40%);
+	$shade_on_70: shade-color($main_color, 70%);
+
+	//shift
+	$shift_on_50: shift-color($main_color, 10%);
+
+	.#{$theme-name} {
+		.theme-font-color-primary {
+			color: $main_color;
+		}
+
+		.theme-font-color-primary-for-link {
+			a {
+				color: $color_on_65;
+
+				&.active {
+					color: $main_color;
+				}
+			}
+		}
+
+		.theme-bk-color {
+			background: $color_on_95;
+		}
+
+		.theme-bk-80 {
+			background: $color_on_80;
+		}
+
+		.theme-dark-font {
+			color: $shade_on_70;
+		}
+
+		.theme-light-font {
+			color: $shade_on_40;
+		}
+
+		// specific classes
+		.input-group {
+			border: 1px solid $color_on_85;
+			background: $color_on_90;
+
+			i {
+				color: $color_on_45;
+			}
+
+			input {
+				color: $color_on_45;
+
+				&::placeholder {
+					color: $color_on_45;
+				}
+			}
+
+			textarea {
+				color: $color_on_45;
+
+				&::placeholder {
+					color: $color_on_45;
+				}
+			}
+		}
+
+		.theme-primary-font-color {
+			color: $main_color;
+		}
+
+		.custom-checkbox {
+			color: $main_color;
+		}
+
+		.text-muted {
+			color: $color_on_90;
+		}
+
+		.theme-light-primary-font {
+			color: $color_on_65;
+		}
+
+		.theme-border-bottom {
+			border-bottom: 1px solid $color_on_85;
+		}
+
+		.theme-user-message {
+			background: $main_color;
+			color: $color_on_95;
+		}
+
+		.theme-other-user-message {
+			background: $color_on_90;
+			color: $shade_on_70;
+		}
+	}
+}

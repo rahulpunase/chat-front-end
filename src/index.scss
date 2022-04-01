@@ -1,0 +1,38 @@
+@import "~bootstrap/scss/bootstrap";
+@import "src/styles/variables";
+
+html, body, .layout {
+	height: 100% !important;
+	overflow: hidden;
+}
+
+@include messenger_themes("blue");
+@include messenger_themes("pink");
+@include messenger_themes("gray");
+@include messenger_themes("green");
+
+.m-mb-8 {
+	margin-bottom: 1.75rem;
+}
+
+.input-group {
+	border-radius: 4px;
+	padding: 12px;
+	.input-group-text {
+		border: none;
+		background: transparent;
+	}
+	.custom-input {
+		background: transparent;
+		border: none;
+		outline: none;
+		flex-grow: 1;
+	}
+}
+
+.time-small {
+	font-size: 0.7rem;
+}
+.time-small-big {
+
+}

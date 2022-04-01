@@ -1,0 +1,13 @@
+.CreateChatPage {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	.searchInputHolder {
+		display: flex;
+	}
+	.friendListHolder {
+		display: flex;
+		overflow-y: auto;
+		flex-grow: 1;
+	}
+}
